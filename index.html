@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Chairs' WEBLAIR | Roblox 3D Portfolio</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#256af4",
+                        "neon-purple": "#c084fc",
+                        "neon-blue": "#7dd3fc",
+                        "background-dark": "#0a0f1a",
+                        "surface-dark": "#161d2b",
+                    },
+                    fontFamily: { "display": ["Spline Sans", "sans-serif"] },
+                    animation: {
+                        'glow-neon': 'neonPulse 2.5s ease-in-out infinite alternate',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        neonPulse: {
+                            '0%': { textShadow: '0 0 5px #c084fc, 0 0 10px #c084fc' },
+                            '100%': { textShadow: '0 0 10px #c084fc, 0 0 20px #7dd3fc, 0 0 30px #256af4' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        .glass {
+            background: rgba(28, 37, 51, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        .typing-cursor::after {
+            content: "|";
+            animation: blink 0.9s step-end infinite;
+        }
+        @keyframes blink { 50% { opacity: 0; } }
+
+        .mesh-bg {
+            background-image: radial-gradient(at 0% 0%, rgba(37, 106, 244, 0.1) 0, transparent 50%), 
+                              radial-gradient(at 100% 100%, rgba(192, 132, 252, 0.05) 0, transparent 50%);
+        }
+    </style>
+</head>
+<body class="bg-background-dark font-display text-white antialiased selection:bg-primary/30 mesh-bg">
+
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+    <header class="sticky top-0 z-50 w-full glass border-b border-white/5">
+        <div class="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto w-full">
+            <div class="flex items-center gap-3 group cursor-pointer">
+                <div class="p-2 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
+                    <span class="material-symbols-outlined text-primary text-3xl block">deployed_code</span>
+                </div>
+                <h2 class="text-xl font-bold tracking-tighter uppercase">CHAIRS' <span class="text-primary">WEBLAIR</span></h2>
+            </div>
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
+                <a href="#" class="hover:text-white transition">Home</a>
+                <a href="#creations" class="hover:text-white transition">Work</a>
+                <a href="https://discord.com/users/chair_5041" class="px-5 py-2 bg-white/5 hover:bg-white/10 rounded-full border border-white/10 transition">Discord</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-1 flex flex-col pb-12">
+        <section class="relative w-full px-5 pt-8 pb-12 max-w-7xl mx-auto w-full">
+            <div class="relative flex min-h-[550px] w-full flex-col items-center justify-center gap-8 overflow-hidden rounded-[2rem] p-8 text-center shadow-2xl border border-white/5"
+                 style="background: linear-gradient(to top, #0a0f1a 10%, rgba(10,15,26,0.5) 100%), url('https://lh3.googleusercontent.com/aida-public/AB6AXuCx2XVxYLaMWs0-p-1TDKENPjElWrOShfUJ6ItWnIZe-0cFU9zdR26jHN0mM36tQf3kyqRF94HV-sGIqKXRdF1MbNi2uBZKJkwp7a77tt3Mxv3jMUdhL26D09HRHrvnhjoHyHlP9EnOnO5k-HFi9eyqyhQPCQA8wthhIdP3F2YdiB-lkuWYjh6cxOD7jmfG9euaebdQN3Z19eCWwjOaFXfmwoYjGjjH1LrdMVqMOOZYeREq5yWHFLHlL-KVLarvXxfe9bqJvWiZiLU'); background-size: cover; background-position: center;">
+                
+                <div class="z-10 space-y-6 animate-float">
+                    <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-widest">
+                        <span class="relative flex h-2 w-2">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                        </span>
+                        Available for Hire
+                    </span>
+                    <h1 class="text-6xl sm:text-8xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-500">
+                        CHAIRS
+                    </h1>
+                    <p class="text-gray-400 max-w-xl mx-auto text-lg leading-relaxed">
+                        High-fidelity modeling, custom texturing, and <span class="text-white">immersive map design</span> for the next generation of games.
+                    </p>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto z-10 mt-4">
+                    <button id="view-portfolio-btn" class="group relative px-12 py-5 bg-primary font-bold rounded-2xl transition-all hover:scale-105 active:scale-95 overflow-hidden">
+                        <span class="relative z-10 uppercase">View Portfolio</span>
+                        <div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                    </button>
+                    <a href="https://discord.com/users/chair_5041" target="_blank" class="px-12 py-5 glass rounded-2xl font-bold hover:bg-white/10 transition-all border border-white/10 flex items-center justify-center gap-2">
+                        CONTACT ME
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-5 grid grid-cols-2 lg:grid-cols-3 gap-4 max-w-7xl mx-auto w-full reveal">
+            <div class="glass p-8 rounded-3xl text-center hover:border-primary/30 transition-colors">
+                <p class="text-5xl font-black text-white tracking-tighter">150+</p>
+                <p class="text-primary text-xs font-bold mt-2 uppercase tracking-widest">Models</p>
+            </div>
+            <div class="glass p-8 rounded-3xl text-center hover:border-primary/30 transition-colors">
+                <p class="text-5xl font-black text-white tracking-tighter">5M+</p>
+                <p class="text-primary text-xs font-bold mt-2 uppercase tracking-widest">Visits</p>
+            </div>
+            <div class="glass p-8 rounded-3xl text-center hover:border-primary/30 transition-colors col-span-2 lg:col-span-1">
+                <p class="text-5xl font-black text-white tracking-tighter">40+</p>
+                <p class="text-primary text-xs font-bold mt-2 uppercase tracking-widest">Clients</p>
+            </div>
+        </section>
+
+        <section id="creations" class="py-20 px-5 max-w-7xl mx-auto w-full reveal">
+            <div class="flex items-end justify-between mb-10">
+                <div>
+                    <h2 class="text-4xl font-black tracking-tighter uppercase">Latest Creations</h2>
+                    <p class="text-gray-500 mt-2">Recently deployed assets and environments</p>
+                </div>
+                <a href="gallery.html" class="group flex items-center gap-2 text-primary font-bold text-sm tracking-widest uppercase">
+                    View All 
+                    <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_right_alt</span>
+                </a>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <a href="gallery.html" class="group relative overflow-hidden rounded-3xl bg-surface-dark border border-white/5 block">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="./images/weapon3.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Weapon">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex gap-2 mb-3">
+                            <span class="px-3 py-1 bg-primary/10 text-primary text-[10px] font-bold rounded-md uppercase">Weapon</span>
+                            <span class="px-3 py-1 bg-primary text-white text-[10px] font-bold rounded-md uppercase">New</span>
+                        </div>
+                        <h3 class="text-xl font-bold group-hover:text-primary transition">Sci-fi Weaponry Pack</h3>
+                    </div>
+                </a>
+                <a href="gallery.html" class="group relative overflow-hidden rounded-3xl bg-surface-dark border border-white/5 block">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="./images/place3.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Places">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex gap-2 mb-3">
+                            <span class="px-3 py-1 bg-white/5 text-gray-400 text-[10px] font-bold rounded-md uppercase">Places</span>
+                        </div>
+                        <h3 class="text-xl font-bold group-hover:text-primary transition">Fantasy Sky Islands</h3>
+                    </div>
+                </a>
+                <a href="gallery.html" class="group relative overflow-hidden rounded-3xl bg-surface-dark border border-white/5 block">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="./images/vehicle1.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Vehicle">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex gap-2 mb-3">
+                            <span class="px-3 py-1 bg-white/5 text-gray-400 text-[10px] font-bold rounded-md uppercase">Vehicle</span>
+                        </div>
+                        <h3 class="text-xl font-bold group-hover:text-primary transition">Aero-Global 737</h3>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <footer class="mt-auto px-5 py-16 border-t border-white/5 bg-black/20">
+            <div class="max-w-7xl mx-auto flex flex-col items-center gap-8 text-center">
+                <div class="flex gap-10">
+                    <a href="https://discord.com/users/chair_5041" target="_blank" class="text-gray-400 hover:text-neon-purple transition-all hover:-translate-y-1">
+                        <span class="material-symbols-outlined text-4xl">chat</span>
+                    </a>
+                    <a href="mailto:buff1234567345@gmail.com" class="text-gray-400 hover:text-neon-blue transition-all hover:-translate-y-1">
+                        <span class="material-symbols-outlined text-4xl">mail</span>
+                    </a>
+                </div>
+                <div class="space-y-2">
+                    <p class="text-xs font-bold tracking-[0.3em] text-gray-500 uppercase">© 2026 All Rights Reserved To CHRMN</p>
+                    <p class="text-sm animate-glow-neon text-neon-purple font-medium">
+                        Website Made by <a href="https://discord.com/users/ezzeldineah" target="_blank" class="hover:text-neon-blue underline underline-offset-4">ezzeldineah</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </main>
+</div>
+
+<div id="portfolio-modal" class="hidden fixed inset-0 bg-black/90 flex items-center justify-center z-[100] backdrop-blur-xl p-4 transition-all">
+    <div class="w-full max-w-2xl glass rounded-[2.5rem] p-10 md:p-12 relative border border-white/10 shadow-[0_0_50px_rgba(37,106,244,0.2)]">
+        <button id="close-modal" class="absolute top-8 right-8 text-gray-400 hover:text-white transition">
+            <span class="material-symbols-outlined text-4xl">close</span>
+        </button>
+
+        <h2 class="text-2xl font-black text-primary mb-8 text-center tracking-widest uppercase">Portfolio</h2>
+        
+        <div id="typing-text" class="font-medium text-gray-200 leading-relaxed min-h-[200px] text-lg"></div>
+
+        <div class="flex justify-center gap-4 mt-10">
+            <button id="close-modal-btn" class="px-8 py-3 glass border border-primary/30 text-primary rounded-xl hover:bg-primary/10 transition-all font-bold">
+                Close
+            </button>
+            <button id="explore-more-btn" class="px-8 py-3 bg-primary text-white rounded-xl hover:opacity-90 transition-all font-bold">
+               REPEAT
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+    const modal = document.getElementById('portfolio-modal');
+    const openBtn = document.getElementById('view-portfolio-btn');
+    const closeBtns = document.querySelectorAll('#close-modal, #close-modal-btn');
+    const exploreMoreBtn = document.getElementById('explore-more-btn');
+    const typingElement = document.getElementById('typing-text');
+
+    const portfolioText = "I have made 3D models for different fields in games, 3D animation, graphics, Roblox, and a lot more. I will continue to do these beautiful models as long as I have your contribution. I have years of experience in modeling using effects, coloring, typography themes, games, and more...";
+
+    let charIndex = 0;
+    let isTyping = false;
+
+    function typeWriter() {
+        if (charIndex < portfolioText.length) {
+            typingElement.textContent += portfolioText.charAt(charIndex);
+            charIndex++;
+            setTimeout(typeWriter, 35);
+        } else {
+            typingElement.classList.remove('typing-cursor');
+        }
+    }
+
+    function openPortfolio() {
+        modal.classList.remove('hidden');
+        typingElement.textContent = '';
+        charIndex = 0;
+        typingElement.classList.add('typing-cursor');
+        if (!isTyping) {
+            isTyping = true;
+            typeWriter();
+        }
+    }
+
+    openBtn.addEventListener('click', openPortfolio);
+
+    exploreMoreBtn.addEventListener('click', () => {
+        isTyping = false;
+        openPortfolio();
+    });
+
+    closeBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            modal.classList.add('hidden');
+            isTyping = false;
+        });
+    });
+
+    // Handle clicking outside the modal
+    modal.addEventListener('click', e => {
+        if (e.target === modal) {
+            modal.classList.add('hidden');
+            isTyping = false;
+        }
+    });
+
+    // Reveal on Scroll logic
+    const observerOptions = { threshold: 0.1 };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('active');
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

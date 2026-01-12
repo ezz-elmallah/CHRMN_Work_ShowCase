@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Roblox Model Gallery</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+<script>
+tailwind.config = {
+    darkMode: "class",
+    theme: {
+        extend: {
+            colors: {
+                "primary": "#256af4",
+                "background-dark": "#101622",
+                "surface-dark": "#1c2533",
+            },
+            fontFamily: { "display": ["Spline Sans", "sans-serif"] },
+        },
+    },
+}
+</script>
+
+<style>
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
+/* Original animation */
+.gallery-item {
+    animation: fadeIn 0.4s ease-out forwards;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.25s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.04) translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* Hide animation */
+.gallery-item.hidden {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    transform: scale(0.95);
+}
+
+/* Show animation */
+.gallery-item.visible {
+    opacity: 1;
+    pointer-events: auto;
+    position: relative;
+}
+
+/* Fade in */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Modal animation */
+@keyframes modalIn {
+    from { opacity: 0; transform: scale(0.9) translateY(20px); }
+    to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.animate-modal {
+    animation: modalIn 0.35s cubic-bezier(.2,.8,.2,1);
+}
+</style>
+</head>
+
+<body class="bg-background-dark font-display text-white antialiased">
+
+<div class="flex min-h-screen flex-col">
+
+<header class="sticky top-0 z-50 backdrop-blur-md bg-background-dark/80 border-b border-white/5 px-6 py-4">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+
+<div class="flex items-center gap-2">
+   <a href="./index.html"><span class="material-symbols-outlined text-primary" style="font-size: 32px;">deployed_code</span></a> 
+    <h2 class="text-xl font-bold tracking-tighter">CHRMN_MODELS</h2>
+</div>
+
+<div class="flex flex-wrap justify-center gap-2" id="filter-buttons">
+    <button data-filter="all" class="filter-btn bg-primary px-5 py-2 rounded-lg text-xs font-bold transition-all">All</button>
+    <button data-filter="place" class="filter-btn bg-surface-dark border border-white/5 px-5 py-2 rounded-lg text-xs font-bold text-gray-400 hover:text-white transition-all">Places</button>
+    <button data-filter="weapon" class="filter-btn bg-surface-dark border border-white/5 px-5 py-2 rounded-lg text-xs font-bold text-gray-400 hover:text-white transition-all">Weapons</button>
+    <button data-filter="character" class="filter-btn bg-surface-dark border border-white/5 px-5 py-2 rounded-lg text-xs font-bold text-gray-400 hover:text-white transition-all">Characters</button>
+    <button data-filter="vehicle" class="filter-btn bg-surface-dark border border-white/5 px-5 py-2 rounded-lg text-xs font-bold text-gray-400 hover:text-white transition-all">Vehicles</button>
+    <button data-filter="other" class="filter-btn bg-surface-dark border border-white/5 px-5 py-2 rounded-lg text-xs font-bold text-gray-400 hover:text-white transition-all">Others</button>
+</div>
+
+</div>
+</header>
+
+<main class="max-w-7xl mx-auto w-full p-6">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 relative" id="gallery-grid">
+
+<!-- ITEM TEMPLATE -->
+<!-- Just keep your items, all fixed paths -->
+
+<!-- PLACES -->
+<div data-category="place" class="gallery-item visible col-span-1 sm:col-span-2 aspect-video rounded-2xl overflow-hidden relative group border border-white/10">
+<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('./images/place5.jpg');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+<div class="absolute bottom-5 left-5">
+<span class="text-primary text-[10px] font-black uppercase tracking-widest">Featured Environment</span>
+<h3 class="text-2xl font-bold">Mushroom Spire Cottage</h3>
+</div>
+</div>
+
+<div data-category="place" class="gallery-item visible aspect-square rounded-2xl overflow-hidden relative group border border-white/10">
+<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('./images/place1.jpg');"></div>
+<div class="absolute bottom-4 left-4"><h3 class="font-bold">Overgrown Ivy Bridge</h3></div>
+</div>
+
+<div data-category="place" class="gallery-item visible aspect-square rounded-2xl overflow-hidden relative group border border-white/10">
+<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('./images/place2.jpg');"></div>
+<div class="absolute bottom-4 left-4"><h3 class="font-bold">Vista Corporate HQ</h3></div>
+</div>
+
+<div data-category="place" class="gallery-item visible aspect-square rounded-2xl overflow-hidden relative group border border-white/10">
+<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('./images/place3.png');"></div>
+<div class="absolute bottom-4 left-4"><h3 class="font-bold">Alchemist’s Brewing Tent</h3></div>
+</div>
+
+<div data-category="place" class="gallery-item visible aspect-square rounded-2xl overflow-hidden relative group border border-white/10">
+<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('./images/place4.jpg');"></div>
+<div class="absolute bottom-4 left-4"><h3 class="font-bold">Snowy Homestead Manor</h3></div>
+</div>
+
+<!-- Characters -->
+ <div data-category="character" class="gallery-item visible aspect-square rounded-2xl overflow-hidden relative group bg-surface-dark border border-white/10">
+<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('./images/charecter1.jpg');"></div>
+<div class="absolute bottom-4 left-4"><span class="bg-primary/80 px-3 py-1 rounded text-[10px] font-bold">Charecters</span></div>
+</div>
+
+<!-- Vehicles -->
+ <div data-category="vehicle" class="gallery-item visible aspect-square rounded-2xl overflow-hidden relative group bg-surface-dark border border-white/10">
+<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('./images/vehicle1.jpg');"></div>
+<div class="absolute bottom-4 left-4"><span class="bg-primary/80 px-3 py-1 rounded text-[10px] font-bold">Aero-Global 737</span></div>
+</div>
+
+<!-- WEAPONS -->
+<div data-category="weapon" class="gallery-item visible aspect-square rounded-2xl overflow-hidden relative group bg-surface-dark border border-white/10">
+<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('./images/weapon1.jpg');"></div>
+<div class="absolute bottom-4 left-4"><span class="bg-primary/80 px-3 py-1 rounded text-[10px] font-bold">Nebula Reaver</span></div>
+</div>
+
+<div data-category="weapon" class="gallery-item visible aspect-square rounded-2xl overflow-hidden relative group bg-surface-dark border border-white/10">
+<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('./images/weapon2.jpg');"></div>
+<div class="absolute bottom-4 left-4"><span class="bg-primary/80 px-3 py-1 rounded text-[10px] font-bold">Obelisk Edge</span></div>
+</div>
+
+<div data-category="weapon" class="gallery-item visible aspect-square rounded-2xl overflow-hidden relative group bg-surface-dark border border-white/10">
+<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('./images/weapon3.jpg');"></div>
+<div class="absolute bottom-4 left-4"><span class="bg-primary/80 px-3 py-1 rounded text-[10px] font-bold">Phantom-V SMG</span></div>
+</div>
+
+<div data-category="weapon" class="gallery-item visible aspect-square rounded-2xl overflow-hidden relative group bg-surface-dark border border-white/10">
+<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('./images/weapon4.jpg');"></div>
+<div class="absolute bottom-4 left-4"><span class="bg-primary/80 px-3 py-1 rounded text-[10px] font-bold">Sea-Glass Trident</span></div>
+</div>
+
+<!-- OTHERS -->
+<div data-category="other" class="gallery-item visible aspect-square rounded-2xl overflow-hidden relative group bg-surface-dark border border-white/10">
+<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('./images/others1.png');"></div>
+<div class="absolute bottom-4 left-4 font-bold text-sm">Pro-Click Neon Mouse</div>
+</div>
+
+<div data-category="other" class="gallery-item visible aspect-square rounded-2xl overflow-hidden relative group bg-surface-dark border border-white/10">
+<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('./images/others2.png');"></div>
+<div class="absolute bottom-4 left-4 font-bold text-sm">Pro-Click Neon Mouse</div>
+</div>
+
+<div data-category="other" class="gallery-item visible aspect-square rounded-2xl overflow-hidden relative group bg-surface-dark border border-white/10">
+<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('./images/others3.jpg');"></div>
+<div class="absolute bottom-4 left-4 font-bold text-sm">Mechanical Keyboard</div>
+</div>
+
+</div>
+</main>
+</div>
+
+<!-- MODAL -->
+<div id="imageModal" class="fixed inset-0 z-[999] hidden items-center justify-center bg-black/70 backdrop-blur-lg">
+<div class="relative max-w-5xl w-[90%] animate-modal">
+<button id="closeModal" class="absolute -top-12 right-0 text-white text-3xl hover:text-primary transition">&times;</button>
+<img id="modalImg" class="w-full max-h-[85vh] object-contain rounded-2xl shadow-2xl border border-white/10">
+<div id="modalTitle" class="text-center mt-4 text-lg font-bold"></div>
+</div>
+</div>
+
+<script>
+const filterBtns = document.querySelectorAll(".filter-btn");
+const items = document.querySelectorAll(".gallery-item");
+
+// Filter logic (FAST, CLEAN)
+function filterGallery(category) {
+    items.forEach(item => {
+        const match = category === "all" || item.dataset.category === category;
+        item.classList.toggle("hidden", !match);
+        item.classList.toggle("visible", match);
+    });
+}
+
+// Button behavior (SAME AS YOUR ORIGINAL)
+filterBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+        filterBtns.forEach(b => {
+            b.classList.remove("bg-primary", "text-white");
+            b.classList.add("bg-surface-dark", "text-gray-400");
+        });
+
+        btn.classList.add("bg-primary", "text-white");
+        btn.classList.remove("bg-surface-dark", "text-gray-400");
+
+        const category = btn.dataset.filter;
+        filterGallery(category);
+    });
+});
+
+// Deep link
+const hash = location.hash.replace("#", "");
+if (hash) {
+    const btn = document.querySelector(`.filter-btn[data-filter="${hash}"]`);
+    if (btn) btn.click();
+}
+
+// Modal
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImg");
+const modalTitle = document.getElementById("modalTitle");
+const closeModal = document.getElementById("closeModal");
+
+document.querySelectorAll(".gallery-item").forEach(item => {
+    item.addEventListener("click", () => {
+        const bgDiv = item.querySelector("div[style*='background-image']");
+        const imgUrl = bgDiv.style.backgroundImage.slice(5, -2);
+        modalImg.src = imgUrl;
+        modalTitle.innerText = item.innerText.trim();
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
+    });
+});
+
+function closeModalFn() {
+    modal.classList.add("hidden");
+    modal.classList.remove("flex");
+}
+
+closeModal.addEventListener("click", closeModalFn);
+modal.addEventListener("click", e => { if (e.target === modal) closeModalFn(); });
+document.addEventListener("keydown", e => { if (e.key === "Escape") closeModalFn(); });
+</script>
+
+</body>
+</html>
